@@ -18,11 +18,17 @@ filmRouter.get('/', function (req, res) {
 
 // create
 filmRouter.post('/', function(req, res) {
-  var film = new Film({
+  const film = new Film({
     title: req.body.title,
     actors: req.body.actors
   });
   films.push(film);
+  res.json({data: films});
+});
+
+// update
+filmRouter.put('/:id', function (req, res) {
+  films[req.params.id] = req.body.film;
   res.json({data: films});
 });
 
