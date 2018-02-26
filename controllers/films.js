@@ -11,6 +11,11 @@ filmRouter.get('/:id', function (req, res) {
   res.json({data: films[req.params.id]})
 });
 
+// index
+filmRouter.get('/', function (req, res) {
+  res.json({data: films})
+});
+
 // create
 filmRouter.post('/', function(req, res) {
   var film = new Film({
