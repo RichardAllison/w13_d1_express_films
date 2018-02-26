@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+app.use(require('./controllers/index'));
+
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
