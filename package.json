@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "mocha client/src/models/specs",
-    "start": "nodemon server",
+    "test": "mocha client/src/specs",
+    "start": "nodemon server.js",
     "webpack": "cd client && webpack -w"
   },
   "author": "",

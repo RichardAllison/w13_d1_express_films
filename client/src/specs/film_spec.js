@@ -1,8 +1,8 @@
-const Film = require('../film');
+const Film = require('../models/film');
 const assert = require('assert');
 
 describe('Film', function () {
-  const film;
+  let film;
 
   beforeEach(function () {
     film = new Film({

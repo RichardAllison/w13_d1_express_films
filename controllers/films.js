@@ -3,6 +3,15 @@ const films = require('../client/src/models/films')();
 const Film = require('../client/src/models/film');
 const Review = require('../client/src/models/review');
 
+const express = require('express');
+const filmRouter = new express.Router();
+
+// show
+filmRouter.get('/:id', function (req, res) {
+  res.json({data: films[req.params.id]})
+});
+
+// create
 filmRouter.post('/', function(req, res) {
   var film = new Film({
     title: req.body.title,
@@ -11,3 +20,5 @@ filmRouter.post('/', function(req, res) {
   films.push(film);
   res.json({data: films});
 });
+
+module.exports = filmRouter;
